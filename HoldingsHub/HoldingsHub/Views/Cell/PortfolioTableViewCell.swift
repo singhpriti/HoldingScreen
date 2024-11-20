@@ -69,11 +69,11 @@ class PortfolioTableViewCell: UITableViewCell {
     
    // MARK: - Configure Cell
    func configure(with holding: Holding) {
-       // Symbol label
+     
        symbolLabel.text = holding.symbol
        symbolLabel.font = UIFont.boldSystemFont(ofSize: 14)
 
-       // Quantity label - Styled "NET QTY: [Quantity]"
+      
        let quantityText = NSMutableAttributedString(string: "NET QTY: ", attributes: [
            .font: UIFont.systemFont(ofSize: 10),
            .foregroundColor: UIColor.gray
