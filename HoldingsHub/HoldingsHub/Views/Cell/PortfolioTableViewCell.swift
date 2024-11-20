@@ -30,35 +30,35 @@ class PortfolioTableViewCell: UITableViewCell {
     
     // MARK: - Setup UI
     private func setupUI() {
-        // Configure the main horizontal stack view
+     
         mainStackView.axis = .horizontal
         mainStackView.spacing = 18
         mainStackView.alignment = .center
         contentView.addSubview(mainStackView)
         mainStackView.translatesAutoresizingMaskIntoConstraints = false
         
-        // Configure left stack (Symbol and Quantity)
+
         leftStackView.axis = .vertical
         leftStackView.spacing = 18
         leftStackView.alignment = .leading
         
-        // Configure right stack (LTP and P&L)
+       
         rightStackView.axis = .vertical
         rightStackView.spacing = 18
         rightStackView.alignment = .trailing
         
-        // Add labels to respective stacks
+    
         leftStackView.addArrangedSubview(symbolLabel)
         leftStackView.addArrangedSubview(quantityLabel)
         
         rightStackView.addArrangedSubview(ltpLabel)
         rightStackView.addArrangedSubview(pnlLabel)
         
-        // Add left and right stacks to the main horizontal stack
+     
         mainStackView.addArrangedSubview(leftStackView)
         mainStackView.addArrangedSubview(rightStackView)
         
-        // Set constraints for main stack view
+    
         NSLayoutConstraint.activate([
             mainStackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
             mainStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
@@ -84,7 +84,7 @@ class PortfolioTableViewCell: UITableViewCell {
        ]))
        quantityLabel.attributedText = quantityText
 
-       // LTP label - Styled with "LTP: ₹[Price]" in bold
+    
        let ltpAttributedString = NSMutableAttributedString(string: "LTP: ", attributes: [
            .font: UIFont.systemFont(ofSize: 10),
            .foregroundColor: UIColor.gray
@@ -97,7 +97,7 @@ class PortfolioTableViewCell: UITableViewCell {
        ltpAttributedString.append(ltpPriceAttributedString)
        ltpLabel.attributedText = ltpAttributedString
        
-       // P&L label - Styled with "P&L: ₹[P&L Value]" in bold and color-coded
+    
        let pnlAttributedString = NSMutableAttributedString(string: "P&L: ", attributes: [
            .font: UIFont.systemFont(ofSize: 10),
            .foregroundColor: UIColor.gray
